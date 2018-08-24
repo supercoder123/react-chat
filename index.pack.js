@@ -1433,7 +1433,7 @@ exports.default = NewRoomForm;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1453,56 +1453,59 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var RoomList = function (_React$Component) {
-    _inherits(RoomList, _React$Component);
+  _inherits(RoomList, _React$Component);
 
-    function RoomList() {
-        _classCallCheck(this, RoomList);
+  function RoomList() {
+    _classCallCheck(this, RoomList);
 
-        return _possibleConstructorReturn(this, (RoomList.__proto__ || Object.getPrototypeOf(RoomList)).apply(this, arguments));
-    }
+    return _possibleConstructorReturn(this, (RoomList.__proto__ || Object.getPrototypeOf(RoomList)).apply(this, arguments));
+  }
 
-    _createClass(RoomList, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
+  _createClass(RoomList, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
 
-            var orderedRooms = [].concat(_toConsumableArray(this.props.rooms)).sort(function (a, b) {
-                return a.id > b.id;
-            });
+      var orderedRooms = [].concat(_toConsumableArray(this.props.rooms)).sort(function (a, b) {
+        return a.id > b.id;
+      });
+      return _react2.default.createElement(
+        "div",
+        { className: "rooms-list" },
+        _react2.default.createElement(
+          "ul",
+          null,
+          _react2.default.createElement(
+            "h2",
+            null,
+            "React chat"
+          ),
+          _react2.default.createElement(
+            "h3",
+            null,
+            "Your rooms:"
+          ),
+          orderedRooms.map(function (room) {
+            var active = room.id === _this2.props.roomId ? "active" : "";
             return _react2.default.createElement(
-                'div',
-                { className: 'rooms-list' },
-                _react2.default.createElement(
-                    'ul',
-                    null,
-                    _react2.default.createElement(
-                        'h3',
-                        null,
-                        'Your rooms:'
-                    ),
-                    orderedRooms.map(function (room) {
-                        var active = room.id === _this2.props.roomId ? 'active' : '';
-                        return _react2.default.createElement(
-                            'li',
-                            { key: room.id, className: "room " + active },
-                            _react2.default.createElement(
-                                'a',
-                                {
-                                    onClick: function onClick() {
-                                        return _this2.props.subscribeToRoom(room.id);
-                                    },
-                                    href: '#' },
-                                '# ',
-                                room.name
-                            )
-                        );
-                    })
-                )
+              "li",
+              { key: room.id, className: "room " + active },
+              _react2.default.createElement(
+                "a",
+                { onClick: function onClick() {
+                    return _this2.props.subscribeToRoom(room.id);
+                  }, href: "#" },
+                "# ",
+                room.name
+              )
             );
-        }
-    }]);
+          })
+        )
+      );
+    }
+  }]);
 
-    return RoomList;
+  return RoomList;
 }(_react2.default.Component);
 
 exports.default = RoomList;

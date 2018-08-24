@@ -103,6 +103,7 @@ body {
   padding: 15px;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .new-room-form input {
@@ -172,13 +173,14 @@ body {
 .send-message-form {
   background: var(--send-message-form);
   display: flex;
+  padding-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .send-message-form input {
   width: 100%;
-  padding: 15px 10px;
-  border-style: none;
   background: var(--send-message-form);
+  padding: 10px;
   font-weight: 200;
 }
 
