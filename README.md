@@ -1,6 +1,6 @@
 # react-chat
 
-A simple chat app built in react as a part of [Scrimba.com](https://scrimba.com)react course. Uses chat kit api for handling all the message passing.
+A simple chat app built in react as a part of [Scrimba.com](https://scrimba.com) react course. Uses chat kit api for handling all the message passing.
 
 ![React Chat](react%20chat.png)
 
